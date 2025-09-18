@@ -4,17 +4,6 @@
 """
 Fine-tune a DeepSeek 8B (LLaMA-like) model for NER (BIO2) with QLoRA.
 
-亮点：
-- 子词对齐：offset_mapping（SentencePiece 友好）
-- 训练稳定性：use_cache=False + gradient checkpointing
-- LoRA 目标模块：自动探测（q/k/v/o_proj, wqkv/wo, gate/up/down_proj）
-- 类别不平衡：自定义 Trainer，对 “O” 类降权（可调）
-- 早停：EarlyStoppingCallback
-- 新增：单进程模型并行（device_map=auto），无需 torchrun
-- 新增：--hf_token / --local_files_only 支持私有模型与离线加载
-
-依赖：
-pip install --upgrade "transformers>=4.40" peft accelerate bitsandbytes seqeval datasets scikit-learn
 """
 
 import os, io, json, argparse
