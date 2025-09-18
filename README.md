@@ -1,5 +1,5 @@
-# Research-Project-2-Bioinformatics
-Imperial final project of **Locally Deployable Biomedical Pre-trained Language Models for Information Extraction and Classification on Curated Evidence-based Corpus**
+# Research-Project-Brief-Display
+Capstone project of **Locally Deployable Biomedical Pre-trained Language Models for Information Extraction and Classification on Curated Evidence-based Corpus**
 
 A python implementation of data curation and language model fine-tune.
 
