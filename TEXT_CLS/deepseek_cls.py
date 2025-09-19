@@ -1,15 +1,5 @@
 
 
-"""
-Fine-tune DeepSeek 8B (LLaMA-like) for TEXT classification with QLoRA.
-
-- 数据：CSV 列 TEXT | LABEL（可用 --text_col/--label_col 改）
-- 训练：QLoRA (4bit nf4) + LoRA，非重入梯度检查点，早停
-- 并行：DDP（torchrun）或单进程模型并行（--single_process_mp）
-- 适配器：支持用 NER 训练得到的 LoRA 作为初始化（--init_adapter），
-          会自动只加载 LoRA 权重并过滤掉 modules_to_save / score（任务头）
-- 稳定性：PAD=EOS、DDP+4bit 设备映射、ddp_find_unused_parameters=False
-"""
 
 import os, io, json, argparse
 from typing import List, Dict, Optional
