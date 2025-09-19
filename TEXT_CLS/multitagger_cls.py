@@ -1,28 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Continue training MultitaggerV2 on a TEXT CLASSIFICATION task using a previously
-trained NER checkpoint as initialization (shared encoder weights).
 
-What it does
-------------
-1) Loads tokenizer + encoder weights from an NER checkpoint directory
-   (e.g., the output of your BIO2 NER training with AutoModelForTokenClassification).
-2) Instantiates a sequence classification head (randomly initialized) while reusing
-   the same encoder weights (ignore mismatched classifier shapes).
-3) Trains on a document/sentence-level classification dataset (CSV/TSV/JSONL).
-4) Saves metrics, label maps, classification report, and confusion matrix.
-
-Usage (minimal)
----------------
-python multitaggerV2_cls_from_ner.py \
-  -n outputs/ner_pubmedbert \
-  -tr /path/to/train.csv \
-  -va /path/to/dev.csv \
-  -te /path/to/test.csv \
-  -o outputs/cls_from_ner \
-  --epochs 3 --batch_size 16 --lr 3e-5 --max_length 256
-"""
 
 import os
 import io
